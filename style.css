@@ -1,0 +1,196 @@
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;500;900&display=swap');
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    body {
+        inset: 0;
+        /* position: relative;
+        /* min-width: 101vw;
+        /* background-image: url('./img/background1.jpg');
+    background-repeat: no-repeat;
+    background-size: cover; */
+        /* min-height: 100vh;
+        align-items: center;
+        */
+    }
+    /* HEADER */
+    
+    .video-slide {
+        z-index: -1;
+        top: 0;
+        left: 0;
+        right: 0;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    
+    .header {
+        height: 140px;
+        display: flex;
+        justify-content: space-between;
+        max-height: 100vh;
+    }
+    
+    .header .logo {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .header .logo img {
+        width: 80%;
+        height: 80%;
+        object-fit: contain;
+    }
+    
+    .header nav {
+        width: 70%;
+        padding: 0 10px;
+    }
+    
+    .header-ul {
+        width: 100%;
+        height: 100%;
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .header-ul li {
+        font-family: 'Poppins', sans-serif;
+        font-size: 16px;
+        font-weight: 900;
+        padding-bottom: 20px;
+        position: relative;
+    }
+    
+    .header-ul li:nth-child(2) {
+        width: 120px;
+    }
+    
+    .header-ul li:last-child {
+        width: 200px;
+    }
+    
+    .header-ul li a {
+        position: relative;
+        text-decoration: none;
+        color: blue;
+        cursor: pointer;
+    }
+    
+    .nav-2 {
+        flex-wrap: wrap;
+        position: absolute;
+        top: 100%;
+        left: 10%;
+        list-style-type: none;
+        display: none;
+        width: 100%;
+    }
+    
+    .nav-2 li {
+        display: flex;
+        flex-direction: column;
+        font-size: 14px;
+        width: 100%;
+    }
+    
+    .header-ul>li>a::before {
+        position: absolute;
+        z-index: 888;
+        content: '';
+        height: 2px;
+        background-color: blue;
+        width: 0;
+        left: 0;
+        bottom: 0;
+    }
+    
+    .header-ul li:nth-child(4) ul {
+        width: 200%;
+        align-items: center;
+        display: none;
+        flex-wrap: wrap;
+    }
+    
+    .header-ul li:nth-child(4) ul li {
+        width: 40%;
+        text-transform: capitalize;
+    }
+    
+    .header-ul>li>a:hover::before {
+        width: 100%;
+        transition: 1s ease;
+    }
+    
+    .header-ul li:hover .nav-2 {
+        display: flex;
+        animation: unhide 1.5s;
+    }
+    
+    .nav-2>li a:hover {
+        font-size: 20px;
+        transition: 1s ease;
+        color: yellow;
+        transform: 0.5s;
+    }
+    
+    .header-ul>li:hover {
+        font-size: 24px;
+        transition: 1s ease;
+    }
+    
+    @keyframes unhide {
+        from {
+            opacity: 0;
+            left: 0;
+        }
+        to {
+            opacity: 1;
+            left: 10%;
+        }
+    }
+    /* BODY */
+    /* Reponse device */
+    
+    @media only screen and (max-width:839px) {
+        .header-ul li a {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+    
+    @media only screen and (max-width:629px) {
+        .header {
+            flex-direction: column;
+        }
+        .header-ul {
+            row-gap: 15px;
+            flex-direction: column;
+        }
+        .header-ul li {
+            padding: 0;
+        }
+        .header-ul li a {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+        }
+        .header .logo img {
+            max-width: 400px;
+        }
+        .header nav {
+            width: 105%;
+        }
+    }
